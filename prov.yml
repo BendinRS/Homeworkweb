@@ -4,9 +4,15 @@
   become: yes # Установка Docker через sudo
   gather_facts: false
   tasks: # Перечисляем задачи которые выполнит наш playbook
+
+    - name: install epel-release
+      yum:
+        state: present
+        name:
+          - epel-release
     - name: Install docker packages # устанавливаем пакеты необходимые для установки докера
       become: yes
-      apt:
+      yum:
         name: "{{ item }}"
         state: present
         update_cache: yes
@@ -18,46 +24,18 @@
       tags:
         - docker
 
-    - name: Add Docker s official GPG key
-      become: yes
-      apt_key:
-        url: https://download.docker.com/linux/ubuntu/gpg
+    - name: install epel-release
+      yum:
         state: present
-      tags:
-        - docker
+        name:
+          - docker
+    
+    - name: start openvpn@server
+      service:
+        name: docker
+        state: started
+        enabled: true
 
-    - name: Verify that we have the key with the fingerprint
-      become: yes
-      apt_key:
-        id: 0EBFCD88
-        state: present
-      tags:
-        - docker
-
-    - name: Set up the stable repository # добавляем репозиторий докера
-      become: yes
-      apt_repository:
-        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable
-        state: present
-        update_cache: yes
-      tags:
-        - docker
-
-    - name: Update apt packages
-      become: yes
-      apt:
-        update_cache: yes
-      tags:
-        - docker
-
-    - name: Install docker # установка докера
-      become: yes
-      apt:
-        name: docker-ce
-        state: present
-        update_cache: yes
-      tags:
-        - docker
 
     - name: Add remote "vagrant" user to "docker" group
       become: yes
