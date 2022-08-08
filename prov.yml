@@ -46,8 +46,8 @@
         src=project 
         dest=/home/vagrant
         
-    - name: reset ssh connection # чтобы применились права на использование docker, необходимо перелогиниться
-      meta: reset_connection
+    # - name: reset ssh connection # чтобы применились права на использование docker, необходимо перелогиниться
+    #   meta: reset_connection
 
     - name: Run container
       shell:
