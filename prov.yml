@@ -10,19 +10,7 @@
         state: present
         name:
           - epel-release
-    - name: Install docker packages # устанавливаем пакеты необходимые для установки докера
-      become: yes
-      yum:
-        name: "{{ item }}"
-        state: present
-        update_cache: yes
-      with_items:
-        - apt-transport-https
-        - ca-certificates
-        - curl
-        - software-properties-common
-      tags:
-        - docker
+ 
 
     - name: install epel-release
       yum:
