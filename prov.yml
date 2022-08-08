@@ -12,27 +12,27 @@
           - epel-release
  
 
-    - name: install epel-release
+    - name: install docker
       yum:
         state: present
         name:
           - docker
     
-    - name: start openvpn@server
+    - name: start docker
       service:
         name: docker
         state: started
         enabled: true
 
 
-    - name: Add remote "vagrant" user to "docker" group
-      become: yes
-      user:
-        name: vagrant
-        group: "docker"
-        append: yes
-      tags:
-        - docker
+    # - name: Add remote "vagrant" user to "docker" group
+    #   become: yes
+    #   user:
+    #     name: vagrant
+    #     group: "docker"
+    #     append: yes
+    #   tags:
+    #     - docker
 
     - name: Install docker-compose
       become: yes
