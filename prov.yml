@@ -51,5 +51,8 @@
 
     - name: Run container
       shell:
+        cmd: /home/vagrant
+
+    - name: Run container
+      shell:
         cmd: "docker-compose -f docker-compose.yml up -d"
-        chdir: /home/vagrant/project
