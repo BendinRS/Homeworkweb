@@ -44,13 +44,15 @@ vagrant стэнд с проброшенными на локалхост пор�
 
 Столкнулся с проблемой при разворачивании задач ансибл
 
-[url=https://ibb.co/r75NSwt][img]https://i.ibb.co/X2FMgC4/111.png[/img][/url]
+![tun](https://i.ibb.co/X2FMgC4/111.png)
+
 
 Проблема с версией питона
 + Решение: В inventory добавил использование ansible_python_interpreter=/usr/bin/python3
 Проскочил
 
-[url=https://ibb.co/m0n9QXS][img]https://i.ibb.co/zF3XK7N/1.png[/img][/url]
+![tun](https://i.ibb.co/zF3XK7N/1.png)
+
 
 Все равно дурил phyton
 
@@ -63,7 +65,8 @@ sudo -H pip install --upgrade ansible
 
 [Успех](ansible.log)
 
-[url=https://ibb.co/YcnRq29][img]https://i.ibb.co/ByWzSLD/222.png[/img][/url]
+![tun](https://i.ibb.co/ByWzSLD/222.png)
+
 
 Вывод: следить за версиями ansible и других модулей:)
 
