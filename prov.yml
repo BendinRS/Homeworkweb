@@ -1,6 +1,6 @@
 ---
 - name: Deploy web app
-  hosts: all # имя хоста, который мы создадим Vagrant`om
+  hosts: all
   become: yes # Установка Docker через sudo
   gather_facts: false
   tasks: # Перечисляем задачи которые выполнит наш playbook
