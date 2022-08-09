@@ -62,14 +62,14 @@
       tags:
         - docker
 
-    # - name: Add remote "vagrant" user to "docker" group
-    #   become: yes
-    #   user:
-    #     name: vagrant
-    #     group: "docker"
-    #     append: yes
-    #   tags:
-    #     - docker
+    - name: Add remote "vagrant" user to "docker" group
+      become: yes
+      user:
+        name: vagrant
+        group: "docker"
+        append: yes
+      tags:
+        - docker
 
     - name: Install docker-compose
       become: yes
