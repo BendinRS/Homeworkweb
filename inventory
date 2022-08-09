@@ -1,1 +1,2 @@
-[all]
+[DynamicWeb]
+DynamicWeb=127.0.0.1 ansible_port=2222 ansible_private_key_file=./.vagrant/machines/DynamicWeb/virtualbox/private_key ansible_python_interpreter=/usr/bin/python3
