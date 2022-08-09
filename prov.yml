@@ -8,16 +8,6 @@
     - name: install python2
       raw: sudo apt-get -y install python-simplejson
 
-    - name: Update and upgrade apt packages
-      become: true
-      apt:
-        upgrade: yes
-
-    - name: Install python
-      become: yes
-      apt:
-        name: python
-        state: present
 
     - name: Install docker packages # устанавливаем пакеты необходимые для установки докера
       become: yes
