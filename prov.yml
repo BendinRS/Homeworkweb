@@ -15,10 +15,10 @@
         name: "{{ item }}"
         state: present
       with_items:
-        - apt-transport-https
-        - ca-certificates
+        # - apt-transport-https
+        # - ca-certificates
         - curl
-        - software-properties-common
+        # - software-properties-common
       tags:
         - docker
 
