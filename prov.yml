@@ -42,12 +42,6 @@
       tags:
         - docker
 
-    - name: Update apt packages
-      become: yes
-      apt:
-        update_cache: yes
-      tags:
-        - docker
 
     - name: Install docker # установка докера
       become: yes
