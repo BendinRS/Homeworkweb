@@ -5,6 +5,17 @@
   gather_facts: false
   tasks: # Перечисляем задачи которые выполнит наш playbook
 
+    - name: Install python packages # устанавливаем пакеты необходимые для установки докера
+      become: yes
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - python-apt
+        - python3-apt
+      tags:
+        - docker
+
 
     - name: Install docker packages # устанавливаем пакеты необходимые для установки докера
       become: yes
@@ -16,8 +27,6 @@
         - ca-certificates
         - curl
         - software-properties-common
-        - python-apt
-        - python3-apt
       tags:
         - docker
 
