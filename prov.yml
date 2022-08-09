@@ -79,6 +79,7 @@
         mode: 0777
 
     - name: Copy project # Копируем проект с хост машины в созданную через vagrant
+      become: yes
       copy: 
         src=project 
         dest=/home/vagrant
