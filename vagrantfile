@@ -13,7 +13,6 @@ Vagrant.configure(2) do |config|
         box.vm.provision "shell", run: "always", inline: <<-SHELL
         apt-get install python3-apt
         SHELL
-      end
-      end
+
       end
     end
