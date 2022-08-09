@@ -11,7 +11,7 @@ Vagrant.configure(2) do |config|
         vbx.customize ["modifyvm", :id, '--audio', 'none']
         end
         vmconfig.vm.provision "shell", run: "always", inline: <<-SHELL
-        sudo apt-get install python3
+        sudo apt-get install python3.9
         python3 --version
         SHELL
 
