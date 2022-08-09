@@ -38,7 +38,7 @@
     - name: Set up the stable repository # добавляем репозиторий докера
       become: yes
       apt_repository:
-        repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
+        repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu/dists/xenial/stable"
         state: present
       tags:
         - docker
