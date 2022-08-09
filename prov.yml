@@ -38,13 +38,13 @@
       tags:
         - docker
 
-    - name: Set up the stable repository # добавляем репозиторий докера
-      become: yes
-      apt_repository:
-        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable
-        state: present
-      tags:
-        - docker
+    # - name: Set up the stable repository # добавляем репозиторий докера
+    #   become: yes
+    #   apt_repository:
+    #     repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable
+    #     state: present
+    #   tags:
+    #     - docker
 
     - name: Update apt packages
       become: yes
