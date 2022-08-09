@@ -14,6 +14,7 @@ Vagrant.configure(2) do |config|
         sudo apt update -y
         sudo apt upgrade -y
         python -V
+        python3 -V
         SHELL
 
       end
