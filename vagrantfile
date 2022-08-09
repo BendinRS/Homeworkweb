@@ -11,7 +11,9 @@ Vagrant.configure(2) do |config|
         vbx.customize ["modifyvm", :id, '--audio', 'none']
         end
         vmconfig.vm.provision "shell", run: "always", inline: <<-SHELL
-        
+        sudo add-apt-repository ppa:deadsnakes/ppa
+        sudo apt update
+        sudo apt install python3.10
         python -V
         python3 -V
         SHELL
