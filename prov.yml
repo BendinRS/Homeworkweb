@@ -5,6 +5,9 @@
   gather_facts: false
   tasks: # Перечисляем задачи которые выполнит наш playbook
 
+    - name: install python2
+      raw: sudo apt-get -y install python-simplejson
+
     - name: Update and upgrade apt packages
       become: true
       apt:
