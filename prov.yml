@@ -1,15 +1,15 @@
 ---
 - name: Deploy web app
-  hosts: all
+  hosts: all # имя хоста, который мы создадим Vagrant`om
   become: yes # Установка Docker через sudo
   gather_facts: false
   tasks: # Перечисляем задачи которые выполнит наш playbook
-
     - name: Install docker packages # устанавливаем пакеты необходимые для установки докера
       become: yes
       apt:
         name: "{{ item }}"
         state: present
+        update_cache: yes
       with_items:
         - apt-transport-https
         - ca-certificates
@@ -39,6 +39,7 @@
       apt_repository:
         repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable
         state: present
+        update_cache: yes
       tags:
         - docker
 
